@@ -121,21 +121,24 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transform: scale(1.18);
+  transform-origin: center;
 }
 
 .menu-search {
   width: 100%;
   border: 1px solid #b9cadf;
   background: rgba(255, 255, 255, 0.86);
-  border-radius: 17px;
-  padding: 0.9rem 1.05rem;
+  border-radius: 15px;
+  padding: 0.7rem 0.95rem;
   color: var(--ink);
-  font-size: 1.03rem;
+  font-size: 0.98rem;
+  line-height: 1.2;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .menu-search-header {
-  min-height: 54px;
+  min-height: 46px;
 }
 
 .page-shell {
@@ -364,8 +367,8 @@ img {
   position: sticky;
   top: var(--header-offset, 72px);
   z-index: 30;
-  margin-top: 0.1rem;
-  padding: 0.26rem 0 0.48rem;
+  margin-top: 0;
+  padding: 0 0 0.48rem;
   background: linear-gradient(to bottom, rgba(248, 243, 232, 0.98), rgba(248, 243, 232, 0.86));
 }
 
@@ -376,7 +379,7 @@ img {
 }
 
 .category-tabs {
-  margin-top: 0.08rem;
+  margin-top: 0;
   display: flex;
   gap: 0.52rem;
   overflow-x: auto;
@@ -605,8 +608,12 @@ html[dir="rtl"] .menu-price {
   }
 
   .menu-search-header {
-    min-height: 58px;
-    font-size: 1.08rem;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+
+  .logo-img {
+    transform: scale(1.15);
   }
 
   .service-strip {
