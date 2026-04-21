@@ -74,12 +74,10 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-areas: "left logo right";
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.48rem 1rem 0.42rem;
+  padding: 0.44rem 1rem 0.38rem;
   background: transparent;
   border-bottom: 1px solid rgba(11, 31, 57, calc(var(--header-progress) * 0.08));
   overflow: clip;
@@ -101,41 +99,7 @@ img {
   z-index: 1;
 }
 
-.header-side {
-  grid-area: left;
-  display: flex;
-  align-items: center;
-  gap: 0.48rem;
-  min-width: 0;
-}
-
-.header-side-left {
-  justify-content: flex-end;
-}
-
-.header-side-right {
-  grid-area: right;
-  justify-content: flex-start;
-}
-
-.header-line {
-  width: clamp(28px, 17vw, 92px);
-  height: 4px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(14, 103, 199, 0.14), rgba(14, 103, 199, 0.82), rgba(245, 177, 75, 0.92));
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.45), 0 4px 10px rgba(14, 103, 199, 0.22);
-}
-
-.header-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff9db 0, var(--accent) 36%, #eb9d2d 100%);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.78), 0 4px 9px rgba(245, 177, 75, 0.42);
-}
-
 .logo-wrap {
-  grid-area: logo;
   display: block;
   position: relative;
   width: 68px;

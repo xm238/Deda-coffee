@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Deda's Coffee and Sandwich</title>
-    <meta
-      name="description"
-      content="Deda's Coffee and Sandwich - 7/24 kahve, sandviç ve hızlı servis."
-    />
+    <title>Deda's Coffee Menu</title>
+    <meta name="description" content="Deda's Coffee and Sandwich Menu" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,101 +14,68 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
-  <body class="page-landing" data-page="landing">
+  <body class="page-menu" data-page="menu">
     <header class="top-header">
-      <div class="header-side header-side-left" aria-hidden="true">
-        <span class="header-dot"></span>
-        <span class="header-line"></span>
-      </div>
-
       <a href="index.html" class="logo-wrap" aria-label="Deda's Coffee">
         <span class="logo-ring" aria-hidden="true"></span>
         <img src="image.png" alt="Deda's Coffee logo" class="logo-img" />
       </a>
-
-      <div class="header-side header-side-right" aria-hidden="true">
-        <span class="header-line"></span>
-        <span class="header-dot"></span>
-      </div>
-
     </header>
 
     <main class="page-shell">
-      <section class="hero-card reveal">
-        <p class="status-pill" data-i18n="landing.openBadge">7/24 Açık</p>
-        <h1 data-i18n="landing.heroTitle">Deda's Coffee and Sandwich</h1>
-        <p class="hero-copy" data-i18n="landing.heroCopy">
-          Bahçeşehir'de günün her saati kahve, kruvasan ve taze sandviç keyfi.
-        </p>
-
-        <div class="hero-actions">
-          <a href="menu.html" class="btn btn-primary" data-i18n="landing.viewMenu">
-            Menüyü Aç
-          </a>
-          <a href="tel:+905380907099" class="btn btn-ghost" data-i18n="landing.callNow">
-            Hemen Ara
-          </a>
-        </div>
-      </section>
-
-      <section class="service-strip reveal stagger">
-        <article class="service-card">
-          <h2 data-i18n="landing.service1Title">Mekanda Servis</h2>
-          <p data-i18n="landing.service1Desc">Rahat ve sakin oturma alanı.</p>
-        </article>
-        <article class="service-card">
-          <h2 data-i18n="landing.service2Title">Drive-through</h2>
-          <p data-i18n="landing.service2Desc">Aracınızdan inmeden hızlı teslim.</p>
-        </article>
-        <article class="service-card">
-          <h2 data-i18n="landing.service3Title">Teslimat</h2>
-          <p data-i18n="landing.service3Desc">No-contact delivery seçeneği mevcut.</p>
-        </article>
-      </section>
-
-      <section class="photo-grid reveal">
-        <img
-          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
-          alt="Fresh coffee"
-          loading="lazy"
+      <section class="sticky-controls">
+        <label class="sr-only" for="menu-search" data-i18n="menu.searchLabel">Menüde Ara</label>
+        <input
+          id="menu-search"
+          class="menu-search"
+          type="search"
+          data-i18n-placeholder="menu.searchPlaceholder"
+          placeholder="Menüde ara..."
         />
-        <img
-          src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80"
-          alt="Croissant and coffee"
-          loading="lazy"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=900&q=80"
-          alt="Sandwich plate"
-          loading="lazy"
-        />
+
+        <div id="category-tabs" class="category-tabs" aria-label="Menu categories"></div>
       </section>
 
-      <section class="info-stack reveal">
-        <article class="info-card">
-          <p class="info-kicker" data-i18n="landing.addressTitle">Adres</p>
-          <p>
-            Shell, Bahçeşehir 1. Kısım, Süzer Blv, benzinlik içi No:1, Başakşehir / İstanbul
-          </p>
-          <a
-            href="https://maps.google.com/?q=3M6Q+39+Başakşehir+İstanbul"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="landing.openMap"
-          >
-            Haritada Aç
-          </a>
-        </article>
-
-        <article class="info-card">
-          <p class="info-kicker" data-i18n="landing.contactTitle">İletişim</p>
-          <p>
-            <a href="tel:+905380907099">0538 090 70 99</a><br />
-            <a href="https://dedascoffee.com" target="_blank" rel="noopener noreferrer">dedascoffee.com</a>
-          </p>
-          <p class="rating-line">4.8 ★ (77)</p>
-        </article>
-      </section>
+      <section id="menu-list" class="menu-list" aria-live="polite"></section>
+      <p id="menu-empty" class="empty-state" data-i18n="menu.noResults">
+        Arama sonucu bulunamadı.
+      </p>
     </main>
+
+    <nav class="bottom-action-bar">
+      <a
+        href="https://wa.me/905380907099"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bottom-action bottom-action-whatsapp"
+      >
+        <span class="action-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.601 2.326A7.854 7.854 0 0 0 8.023 0a7.88 7.88 0 0 0-6.79 11.865L0 16l4.289-1.125A7.88 7.88 0 0 0 8.022 16a7.86 7.86 0 0 0 5.58-13.674ZM8.022 14.67a6.55 6.55 0 0 1-3.334-.908l-.24-.144-2.54.667.677-2.472-.156-.254a6.55 6.55 0 1 1 5.593 3.11Zm3.59-4.892c-.196-.099-1.16-.573-1.34-.638-.18-.066-.312-.099-.443.099-.132.196-.51.638-.624.77-.115.131-.23.147-.427.05-.197-.1-.83-.306-1.581-.975-.584-.52-.98-1.161-1.095-1.358-.114-.198-.012-.304.086-.402.09-.09.196-.23.295-.345.099-.115.132-.197.197-.329.066-.131.033-.247-.016-.345-.05-.099-.443-1.067-.607-1.462-.16-.386-.323-.334-.443-.34l-.378-.007a.724.724 0 0 0-.525.247c-.18.197-.689.673-.689 1.642s.706 1.905.804 2.036c.1.132 1.39 2.122 3.37 2.975.471.203.838.324 1.124.415.473.15.904.129 1.245.078.38-.057 1.16-.474 1.324-.931.164-.458.164-.85.115-.932-.05-.082-.181-.131-.377-.23Z"
+            />
+          </svg>
+        </span>
+        <span data-i18n="menu.whatsappButton">WhatsApp</span>
+      </a>
+      <a href="tel:+905380907099" class="bottom-action bottom-action-call">
+        <span class="action-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.88.34 1.74.65 2.56a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 2.11-.45c.82.31 1.68.53 2.56.65A2 2 0 0 1 22 16.92Z"
+            />
+          </svg>
+        </span>
+        <span data-i18n="menu.callButton">Ara</span>
+      </a>
+    </nav>
   </body>
 </html>
