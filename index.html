@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deda's Coffee and Sandwich</title>
+    <meta
+      name="description"
+      content="Deda's Coffee and Sandwich - 7/24 kahve, sandviç ve hızlı servis."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body class="page-landing" data-page="landing">
+    <header class="top-header">
+      <div class="header-side header-side-left" aria-hidden="true">
+        <span class="header-dot"></span>
+        <span class="header-line"></span>
+      </div>
+
+      <a href="index.html" class="logo-wrap" aria-label="Deda's Coffee">
+        <span class="logo-ring" aria-hidden="true"></span>
+        <img src="image.png" alt="Deda's Coffee logo" class="logo-img" />
+      </a>
+
+      <div class="header-side header-side-right" aria-hidden="true">
+        <span class="header-line"></span>
+        <span class="header-dot"></span>
+      </div>
+
+    </header>
+
+    <main class="page-shell">
+      <section class="hero-card reveal">
+        <p class="status-pill" data-i18n="landing.openBadge">7/24 Açık</p>
+        <h1 data-i18n="landing.heroTitle">Deda's Coffee and Sandwich</h1>
+        <p class="hero-copy" data-i18n="landing.heroCopy">
+          Bahçeşehir'de günün her saati kahve, kruvasan ve taze sandviç keyfi.
+        </p>
+
+        <div class="hero-actions">
+          <a href="menu.html" class="btn btn-primary" data-i18n="landing.viewMenu">
+            Menüyü Aç
+          </a>
+          <a href="tel:+905380907099" class="btn btn-ghost" data-i18n="landing.callNow">
+            Hemen Ara
+          </a>
+        </div>
+      </section>
+
+      <section class="service-strip reveal stagger">
+        <article class="service-card">
+          <h2 data-i18n="landing.service1Title">Mekanda Servis</h2>
+          <p data-i18n="landing.service1Desc">Rahat ve sakin oturma alanı.</p>
+        </article>
+        <article class="service-card">
+          <h2 data-i18n="landing.service2Title">Drive-through</h2>
+          <p data-i18n="landing.service2Desc">Aracınızdan inmeden hızlı teslim.</p>
+        </article>
+        <article class="service-card">
+          <h2 data-i18n="landing.service3Title">Teslimat</h2>
+          <p data-i18n="landing.service3Desc">No-contact delivery seçeneği mevcut.</p>
+        </article>
+      </section>
+
+      <section class="photo-grid reveal">
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+          alt="Fresh coffee"
+          loading="lazy"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80"
+          alt="Croissant and coffee"
+          loading="lazy"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=900&q=80"
+          alt="Sandwich plate"
+          loading="lazy"
+        />
+      </section>
+
+      <section class="info-stack reveal">
+        <article class="info-card">
+          <p class="info-kicker" data-i18n="landing.addressTitle">Adres</p>
+          <p>
+            Shell, Bahçeşehir 1. Kısım, Süzer Blv, benzinlik içi No:1, Başakşehir / İstanbul
+          </p>
+          <a
+            href="https://maps.google.com/?q=3M6Q+39+Başakşehir+İstanbul"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="landing.openMap"
+          >
+            Haritada Aç
+          </a>
+        </article>
+
+        <article class="info-card">
+          <p class="info-kicker" data-i18n="landing.contactTitle">İletişim</p>
+          <p>
+            <a href="tel:+905380907099">0538 090 70 99</a><br />
+            <a href="https://dedascoffee.com" target="_blank" rel="noopener noreferrer">dedascoffee.com</a>
+          </p>
+          <p class="rating-line">4.8 ★ (77)</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
