@@ -16,23 +16,23 @@
   </head>
   <body class="page-menu" data-page="menu">
     <header class="top-header">
-      <a href="index.html" class="logo-wrap" aria-label="Deda's Coffee">
-        <span class="logo-ring" aria-hidden="true"></span>
-        <img src="image.png" alt="Deda's Coffee logo" class="logo-img" />
-      </a>
-    </header>
-
-    <main class="page-shell">
-      <section class="sticky-controls">
+      <div class="header-main">
+        <a href="menu.html" class="logo-wrap" aria-label="Deda's Coffee">
+          <img src="image.png" alt="Deda's Coffee logo" class="logo-img" />
+        </a>
         <label class="sr-only" for="menu-search" data-i18n="menu.searchLabel">Menüde Ara</label>
         <input
           id="menu-search"
-          class="menu-search"
+          class="menu-search menu-search-header"
           type="search"
           data-i18n-placeholder="menu.searchPlaceholder"
           placeholder="Menüde ara..."
         />
+      </div>
+    </header>
 
+    <main class="page-shell">
+      <section class="sticky-controls">
         <div id="category-tabs" class="category-tabs" aria-label="Menu categories"></div>
       </section>
 
